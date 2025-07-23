@@ -161,9 +161,10 @@
 		font-family: 'Sixtyfour', monospace;
 		font-size: 1.5rem;
 		color: #2c5aa0;
-		font-weight: 400;
+		font-variation-settings: "BLED" 0, "SCAN" 0;
 		animation: flash 1s infinite;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+		letter-spacing: 0.1em;
 	}
 
 	@keyframes flash {

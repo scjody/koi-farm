@@ -116,15 +116,14 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		min-height: 400px;
+		min-height: 50vh;
 		position: relative;
 	}
 
 	.koi-image {
-		max-width: 400px;
-		max-height: 400px;
-		width: auto;
+		width: 75vw;
 		height: auto;
+		max-height: 75vh;
 		object-fit: contain;
 		filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
 		position: absolute;
@@ -137,13 +136,8 @@
 			margin-bottom: 2rem;
 		}
 
-		.koi-image {
-			max-width: 300px;
-			max-height: 300px;
-		}
-
 		.koi-display {
-			min-height: 300px;
+			min-height: 40vh;
 		}
 	}
 
@@ -152,9 +146,8 @@
 			font-size: 2rem;
 		}
 
-		.koi-image {
-			max-width: 250px;
-			max-height: 250px;
+		.koi-display {
+			min-height: 35vh;
 		}
 	}
 </style>

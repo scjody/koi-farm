@@ -56,6 +56,29 @@
 		
 		// Change koi every 5 seconds
 		intervalId = setInterval(changeKoi, 5000);
+
+		// Start background music
+		const audio = new Audio('/frostbyte-dreams.mp3');
+		audio.loop = true;
+		audio.volume = 0.3; // Set to 30% volume
+		
+		// Auto-play with user interaction handling
+		const playAudio = () => {
+			audio.play().catch(e => console.log('Audio autoplay prevented:', e));
+		};
+		
+		// Try to play immediately
+		playAudio();
+		
+		// Also play on first user interaction
+		const handleFirstInteraction = () => {
+			playAudio();
+			document.removeEventListener('click', handleFirstInteraction);
+			document.removeEventListener('keydown', handleFirstInteraction);
+		};
+		
+		document.addEventListener('click', handleFirstInteraction);
+		document.addEventListener('keydown', handleFirstInteraction);
 	});
 
 	onDestroy(() => {
@@ -82,6 +105,8 @@
 				{/key}
 			{/if}
 		</div>
+
+		<div class="insert-coin">INSERT COIN</div>
 	</div>
 </main>
 
@@ -127,6 +152,27 @@
 		object-fit: contain;
 		filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
 		position: absolute;
+	}
+
+	.insert-coin {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		font-family: 'Sixtyfour', monospace;
+		font-size: 1.5rem;
+		color: #2c5aa0;
+		font-weight: 400;
+		animation: flash 1s infinite;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	@keyframes flash {
+		0%, 50% {
+			opacity: 1;
+		}
+		51%, 100% {
+			opacity: 0;
+		}
 	}
 
 	/* Responsive design */

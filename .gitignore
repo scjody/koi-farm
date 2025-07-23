@@ -1,3 +1,6 @@
+# Source code should be tracked (override global gitignore)
+!src/
+
 # Dependencies
 node_modules/
 .pnp.*

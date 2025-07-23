@@ -99,7 +99,6 @@
 
 	.container {
 		text-align: center;
-		max-width: 800px;
 		width: 100%;
 	}
 

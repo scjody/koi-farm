@@ -121,9 +121,10 @@
 	}
 
 	.koi-image {
-		width: 75vw;
-		height: auto;
-		max-height: 75vh;
+		width: 75vw !important;
+		height: auto !important;
+		max-width: none !important;
+		max-height: 75vh !important;
 		object-fit: contain;
 		filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
 		position: absolute;

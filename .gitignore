@@ -9,6 +9,7 @@ node_modules/
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+package-lock.json
 
 # Build outputs
 .svelte-kit/
@@ -91,3 +92,5 @@ jspm_packages/
 # Storybook build outputs
 .out
 .storybook-out
+# Local Netlify folder
+.netlify

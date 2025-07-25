@@ -1,0 +1,17 @@
+/* Import C64 styles globally */
+@import '$lib/styles/commodore64.css';
+
+/* Global reset for C64 styling */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Ensure the app container fills the viewport */
+#svelte {
+  width: 100%;
+  height: 100%;
+}

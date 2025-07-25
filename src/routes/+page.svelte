@@ -89,8 +89,8 @@
 </script>
 
 <main>
-	<div class="container">
-		<h1 class="title">Happy Koi Farm</h1>
+	<div class="c64-content">
+		<h1 class="c64-title c64-text c64-title-custom">Happy Koi Farm</h1>
 		
 		<div class="koi-display">
 			{#if currentKoi}
@@ -106,95 +106,88 @@
 			{/if}
 		</div>
 
-		<div class="insert-coin">INSERT COIN</div>
+		<div class="insert-coin c64-text c64-flash">INSERT COIN</div>
 	</div>
 </main>
 
 <style>
 	main {
-		min-height: 100vh;
-		background: linear-gradient(135deg, #87CEEB 0%, #98E4D6 50%, #B0E5D1 100%);
+		width: 100%;
+		height: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin: 0;
-		padding: 2rem;
-		box-sizing: border-box;
+		padding: 1rem;
 	}
 
-	.container {
+	.c64-content {
 		text-align: center;
 		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 1rem;
 	}
 
-	.title {
-		font-family: 'Pacifico', cursive;
-		font-size: 4rem;
-		color: #2c5aa0;
-		margin-bottom: 3rem;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-		line-height: 1.2;
+	.c64-title {
+		margin: 1rem 0;
 	}
 
 	.koi-display {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		min-height: 50vh;
+		flex: 1 1 auto;
 		position: relative;
+		width: 100%;
+		min-height: 0;
+		overflow: hidden;
+		padding: 0.5rem;
 	}
 
 	.koi-image {
-		width: 75vw !important;
-		height: auto !important;
-		max-width: none !important;
-		max-height: 75vh !important;
+		width: 80%;
+		height: auto;
+		max-width: 80%;
+		max-height: 80%;
 		object-fit: contain;
-		filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+		filter: 
+			drop-shadow(0 0 10px rgba(0, 136, 255, 0.3))
+			brightness(1.1)
+			contrast(1.2);
 		position: absolute;
+		image-rendering: auto;
 	}
 
 	.insert-coin {
-		position: fixed;
-		bottom: 2rem;
-		right: 2rem;
-		font-family: 'Sixtyfour', monospace;
-		font-size: 1.5rem;
-		color: #2c5aa0;
-		font-variation-settings: "BLED" 0, "SCAN" 0;
-		animation: flash 1s infinite;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-		letter-spacing: 0.1em;
-	}
-
-	@keyframes flash {
-		0%, 50% {
-			opacity: 1;
-		}
-		51%, 100% {
-			opacity: 0;
-		}
+		font-size: 1.2rem;
+		margin: 1rem 0;
 	}
 
 	/* Responsive design */
 	@media (max-width: 768px) {
-		.title {
-			font-size: 2.5rem;
-			margin-bottom: 2rem;
+		.c64-content {
+			padding: 1rem;
 		}
 
 		.koi-display {
-			min-height: 40vh;
+			padding: 1rem 0;
 		}
 	}
 
 	@media (max-width: 480px) {
-		.title {
-			font-size: 2rem;
+		.c64-content {
+			padding: 0.5rem;
 		}
 
 		.koi-display {
-			min-height: 35vh;
+			padding: 0.5rem 0;
+		}
+
+		.insert-coin {
+			font-size: 1rem;
 		}
 	}
 </style>

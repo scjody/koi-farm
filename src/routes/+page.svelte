@@ -126,36 +126,43 @@
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
-		padding: 2rem;
+		justify-content: center;
+		align-items: center;
+		padding: 1rem;
+	}
+
+	.c64-title {
+		margin: 1rem 0;
 	}
 
 	.koi-display {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		flex: 1;
+		flex: 1 1 auto;
 		position: relative;
-		padding: 2rem 0;
+		width: 100%;
+		min-height: 0;
+		overflow: hidden;
 	}
 
 	.koi-image {
-		width: 90% !important;
-		height: auto !important;
-		max-height: 90% !important;
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		max-height: 100%;
 		object-fit: contain;
 		filter: 
 			drop-shadow(0 0 10px rgba(0, 136, 255, 0.3))
 			brightness(1.1)
 			contrast(1.2);
-		position: absolute;
+		position: relative;
 		image-rendering: auto;
 	}
 
 	.insert-coin {
 		font-size: 1.2rem;
-		margin-top: auto;
-		padding-bottom: 1rem;
+		margin: 1rem 0;
 	}
 
 	/* Responsive design */
@@ -164,9 +171,8 @@
 			padding: 1rem;
 		}
 
-		.koi-image {
-			width: 95% !important;
-			max-height: 85% !important;
+		.koi-display {
+			padding: 1rem 0;
 		}
 	}
 
@@ -175,9 +181,8 @@
 			padding: 0.5rem;
 		}
 
-		.koi-image {
-			width: 95% !important;
-			max-height: 80% !important;
+		.koi-display {
+			padding: 0.5rem 0;
 		}
 
 		.insert-coin {

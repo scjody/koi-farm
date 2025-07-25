@@ -155,7 +155,7 @@
 	.fish-card {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 		max-width: 600px;
 		width: 100%;
 	}
@@ -163,13 +163,13 @@
 	.fish-info {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 		width: 100%;
 	}
 
 	.fish-text {
 		width: 100%;
-		text-align: left;
+		text-align: center;
 	}
 
 	.fish-image {
@@ -188,6 +188,7 @@
 		font-size: 1em;
 		margin: 0 0 1em 0;
 		text-transform: uppercase;
+		text-align: center;
 	}
 
 	.fish-description {
@@ -200,14 +201,19 @@
 		min-height: 4em;
 		max-height: 4em;
 		overflow: hidden;
+		text-align: left;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.stats {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5em;
+		gap: 0;
 		width: 100%;
 		max-width: 300px;
+		margin-left: 6ch;
+		text-align: left;
 	}
 
 	.stat {

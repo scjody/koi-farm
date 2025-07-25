@@ -62,10 +62,20 @@ html, body {
   overflow: hidden;
   
   /* Responsive sizing maintaining aspect ratio */
-  width: calc(100vw - 2 * var(--c64-border-min));
-  height: calc(100vh - 2 * var(--c64-border-min));
-  max-width: calc((100vh - 2 * var(--c64-border-min)) * 4 / 3);
-  max-height: calc((100vw - 2 * var(--c64-border-min)) * 3 / 4);
+  aspect-ratio: 4 / 3;
+  width: 80vw;
+  max-width: calc(80vh * 4 / 3);
+  max-height: 80vh;
+}
+
+/* Alternative method for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 4 / 3) {
+  .c64-screen {
+    width: 80vw;
+    height: calc(80vw * 3 / 4);
+    max-width: calc(80vh * 4 / 3);
+    max-height: 80vh;
+  }
 }
 
 /* C64 Text Styling */
@@ -83,6 +93,13 @@ html, body {
   text-align: center;
   margin: 2rem 0;
   animation: c64-glow 2s ease-in-out infinite alternate;
+}
+
+/* Title with custom font */
+.c64-title-custom {
+  font-family: 'Pacifico', cursive;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 /* C64 Button Styling */

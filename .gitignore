@@ -1,6 +1,9 @@
 # Source code should be tracked (override global gitignore)
 !src/
 
+# Planning documents
+plans/
+
 # Dependencies
 node_modules/
 .pnp.*
@@ -94,3 +97,5 @@ jspm_packages/
 .storybook-out
 # Local Netlify folder
 .netlify
+.claude/
+plans/

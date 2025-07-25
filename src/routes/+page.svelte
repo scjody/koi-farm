@@ -90,7 +90,7 @@
 
 <main>
 	<div class="c64-content">
-		<h1 class="c64-title c64-text c64-font">HAPPY KOI FARM</h1>
+		<h1 class="c64-title c64-text c64-title-custom">Happy Koi Farm</h1>
 		
 		<div class="koi-display">
 			{#if currentKoi}

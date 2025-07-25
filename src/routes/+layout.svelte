@@ -1,6 +1,7 @@
 <script>
   import '$lib/styles/commodore64.css';
   import '$lib/styles/c64-font.css';
+  import '../app.css';
 </script>
 
 <div class="c64-container">

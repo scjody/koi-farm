@@ -101,7 +101,6 @@
 						class="koi-image"
 						in:receive={{key: currentKoi}}
 						out:send={{key: currentKoi}}
-						style="width: min(90%, 90vh * 0.6); height: auto;"
 					/>
 				{/key}
 			{/if}
@@ -149,6 +148,10 @@
 	}
 
 	.koi-image {
+		width: 80%;
+		height: auto;
+		max-width: 80%;
+		max-height: 80%;
 		object-fit: contain;
 		filter: 
 			drop-shadow(0 0 10px rgba(0, 136, 255, 0.3))

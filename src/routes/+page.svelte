@@ -173,7 +173,7 @@
 	}
 
 	.insert-coin {
-		font-size: 1.2rem;
+		font-size: 1em;
 		margin: 1rem 0;
 		background: none;
 		border: none;
@@ -208,7 +208,7 @@
 		}
 
 		.insert-coin {
-			font-size: 1rem;
+			font-size: 1em;
 		}
 	}
 </style>

@@ -83,15 +83,21 @@
 				<div class="stats">
 					<div class="stat">
 						<span class="stat-label c64-text">CLEVERNESS:</span>
-						<span class="stars">{renderStars(currentFish.stats.cleverness)}</span>
+						<span class="stars">
+							<span class="stars-on">{"*".repeat(currentFish.stats.cleverness)}</span><span class="stars-off">{"*".repeat(5 - currentFish.stats.cleverness)}</span>
+						</span>
 					</div>
 					<div class="stat">
 						<span class="stat-label c64-text">CHARM:</span>
-						<span class="stars">{renderStars(currentFish.stats.charm)}</span>
+						<span class="stars">
+							<span class="stars-on">{"*".repeat(currentFish.stats.charm)}</span><span class="stars-off">{"*".repeat(5 - currentFish.stats.charm)}</span>
+						</span>
 					</div>
 					<div class="stat">
 						<span class="stat-label c64-text">CONSENT:</span>
-						<span class="stars">{renderStars(currentFish.stats.consent)}</span>
+						<span class="stars">
+							<span class="stars-on">{"*".repeat(currentFish.stats.consent)}</span><span class="stars-off">{"*".repeat(5 - currentFish.stats.consent)}</span>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -116,12 +122,6 @@
 	</div>
 </main>
 
-<script context="module" lang="ts">
-	function renderStars(rating: number): string {
-		return '★'.repeat(rating) + '☆'.repeat(5 - rating);
-	}
-</script>
-
 <style>
 	main {
 		width: 100%;
@@ -142,7 +142,7 @@
 	}
 
 	.c64-title {
-		font-size: 2rem;
+		font-size: 2em;
 		margin: 1rem 0;
 	}
 
@@ -184,13 +184,13 @@
 	}
 
 	.fish-name {
-		font-size: 1.5rem;
+		font-size: 1.5em;
 		margin: 0.5rem 0;
 		text-transform: uppercase;
 	}
 
 	.fish-description {
-		font-size: 0.9rem;
+		font-size: 1em;
 		margin: 0.5rem 0 1rem;
 		max-width: 400px;
 		line-height: 1.4;
@@ -211,13 +211,21 @@
 	}
 
 	.stat-label {
-		font-size: 0.9rem;
+		font-size: 1em;
 	}
 
 	.stars {
+		font-family: 'Sixtyfour', monospace;
+		font-size: 1em;
+		letter-spacing: 0;
+	}
+	
+	.stars-on {
 		color: var(--c64-yellow);
-		font-size: 1.2rem;
-		letter-spacing: 0.2rem;
+	}
+	
+	.stars-off {
+		color: var(--c64-dark-grey);
 	}
 
 	.nav-button {
@@ -246,13 +254,13 @@
 	}
 
 	.select-button {
-		font-size: 1.2rem;
+		font-size: 1em;
 		padding: 0.8rem 2rem;
 		margin-bottom: 1rem;
 	}
 
 	.instructions {
-		font-size: 0.8rem;
+		font-size: 1em;
 		opacity: 0.8;
 	}
 
@@ -269,17 +277,17 @@
 		}
 
 		.fish-name {
-			font-size: 1.2rem;
+			font-size: 1.2em;
 		}
 
 		.fish-description {
-			font-size: 0.8rem;
+			font-size: 1em;
 		}
 	}
 
 	@media (max-width: 480px) {
 		.c64-title {
-			font-size: 1.5rem;
+			font-size: 1.5em;
 		}
 
 		.fish-display {
@@ -301,7 +309,7 @@
 		}
 
 		.select-button {
-			font-size: 1rem;
+			font-size: 1em;
 			padding: 0.6rem 1.5rem;
 		}
 	}

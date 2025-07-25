@@ -64,7 +64,7 @@
 	}
 
 	.c64-title {
-		font-size: 2rem;
+		font-size: 2em;
 		margin: 1rem 0;
 	}
 
@@ -94,11 +94,11 @@
 	}
 
 	.fish-name {
-		font-size: 1.2rem;
+		font-size: 1em;
 	}
 
 	.coming-soon {
-		font-size: 1.5rem;
+		font-size: 1.5em;
 		margin: 2rem 0;
 	}
 </style>

@@ -1,0 +1,81 @@
+{
+  "fishes": [
+    {
+      "id": "golden-yellow-white",
+      "name": "Yamabuki Ogon",
+      "image": "golden-yellow-white-koi.png",
+      "description": "A brilliant golden koi with a lustrous metallic sheen. Known for bringing prosperity and good fortune.",
+      "stats": {
+        "cleverness": 3,
+        "charm": 5,
+        "consent": 4
+      }
+    },
+    {
+      "id": "orange-white",
+      "name": "Kohaku",
+      "image": "orange-white-koi.png",
+      "description": "The classic red and white koi. Symbolizes success in career and life.",
+      "stats": {
+        "cleverness": 4,
+        "charm": 4,
+        "consent": 3
+      }
+    },
+    {
+      "id": "dark-bronze-golden",
+      "name": "Chagoi",
+      "image": "dark-bronze-golden-koi.png",
+      "description": "A friendly bronze-colored koi. The gentle giant known for its calm temperament.",
+      "stats": {
+        "cleverness": 2,
+        "charm": 3,
+        "consent": 5
+      }
+    },
+    {
+      "id": "white-orange-spotted",
+      "name": "Tancho",
+      "image": "white-orange-spotted-koi.png",
+      "description": "Distinguished by the circular red marking on its head. Represents the Japanese flag.",
+      "stats": {
+        "cleverness": 5,
+        "charm": 4,
+        "consent": 2
+      }
+    },
+    {
+      "id": "black-white-striped",
+      "name": "Shiro Utsuri",
+      "image": "black-white-striped-koi.png",
+      "description": "A striking black and white koi with bold patterns. Brings balance and harmony.",
+      "stats": {
+        "cleverness": 4,
+        "charm": 3,
+        "consent": 4
+      }
+    },
+    {
+      "id": "red-orange-golden",
+      "name": "Goshiki",
+      "image": "red-orange-golden-koi.png",
+      "description": "The 'five-colored' koi with a complex pattern. A mysterious beauty with hidden depths.",
+      "stats": {
+        "cleverness": 5,
+        "charm": 2,
+        "consent": 4
+      }
+    },
+    {
+      "id": "silver-red-cap",
+      "name": "Kikusui",
+      "image": "silver-red-cap-koi.png",
+      "description": "A platinum koi with red accents. Symbolizes perseverance and strength.",
+      "stats": {
+        "cleverness": 3,
+        "charm": 4,
+        "consent": 4
+      }
+    }
+  ]
+}

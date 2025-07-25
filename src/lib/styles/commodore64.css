@@ -122,6 +122,10 @@ html, body {
   box-shadow: 0 0 10px rgba(0, 136, 255, 0.8);
 }
 
+.c64-button:active {
+  transform: scale(0.98);
+}
+
 /* C64 Glow Animation */
 @keyframes c64-glow {
   from {

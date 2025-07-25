@@ -140,9 +140,9 @@
 	}
 
 	.koi-image {
-		width: 60% !important;
+		width: 80% !important;
 		height: auto !important;
-		max-height: 60% !important;
+		max-height: 80% !important;
 		object-fit: contain;
 		filter: 
 			drop-shadow(0 0 10px rgba(0, 136, 255, 0.3))
@@ -165,8 +165,8 @@
 		}
 
 		.koi-image {
-			width: 80% !important;
-			max-height: 50% !important;
+			width: 85% !important;
+			max-height: 70% !important;
 		}
 	}
 
@@ -177,7 +177,7 @@
 
 		.koi-image {
 			width: 90% !important;
-			max-height: 45% !important;
+			max-height: 65% !important;
 		}
 
 		.insert-coin {

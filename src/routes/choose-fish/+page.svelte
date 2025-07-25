@@ -137,13 +137,13 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		padding: 1rem;
+		padding: 1em;
 		text-align: center;
 	}
 
 	.c64-title {
 		font-size: 1em;
-		margin: 1rem 0;
+		margin: 1em 0;
 	}
 
 	.fish-display {
@@ -151,9 +151,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 2rem;
+		gap: 2em;
 		position: relative;
-		padding: 1rem;
+		padding: 0;
 	}
 
 	.fish-card {
@@ -180,26 +180,27 @@
 			drop-shadow(0 0 10px rgba(0, 136, 255, 0.3))
 			brightness(1.1)
 			contrast(1.2);
-		margin-bottom: 1rem;
+		margin-bottom: 0;
 	}
 
 	.fish-name {
 		font-size: 1em;
-		margin: 0.5rem 0;
+		margin: 0;
 		text-transform: uppercase;
 	}
 
 	.fish-description {
 		font-size: 1em;
-		margin: 0.5rem 0 1rem;
-		max-width: 400px;
+		margin: 0 0 1em;
+		width: 30ch;
+		max-width: 30ch;
 		line-height: 1.4;
 	}
 
 	.stats {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 0.5em;
 		width: 100%;
 		max-width: 300px;
 	}
@@ -230,33 +231,32 @@
 
 	.nav-button {
 		background: none;
-		border: 2px solid var(--c64-light-blue);
+		border: none;
 		color: var(--c64-light-blue);
 		font-family: 'Sixtyfour', monospace;
 		font-size: 1em;
-		width: 3em;
-		height: 3em;
+		width: 1em;
+		height: 1em;
 		cursor: pointer;
 		transition: all 0.2s ease;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		padding: 0;
 	}
 
 	.nav-button:hover {
-		background-color: var(--c64-light-blue);
-		color: var(--c64-blue);
-		box-shadow: 0 0 10px rgba(0, 136, 255, 0.8);
+		text-shadow: 0 0 10px rgba(0, 136, 255, 0.8);
 	}
 
 	.controls {
-		margin-top: 1rem;
+		margin-top: 0;
 	}
 
 	.select-button {
 		font-size: 1em;
-		padding: 0.8rem 2rem;
-		margin-bottom: 1rem;
+		padding: 0.5em 2em;
+		margin-bottom: 1em;
 	}
 
 	.instructions {
@@ -267,12 +267,12 @@
 	/* Responsive design */
 	@media (max-width: 768px) {
 		.fish-display {
-			gap: 1rem;
+			gap: 1em;
 		}
 
 		.nav-button {
-			width: 2.5em;
-			height: 2.5em;
+			width: 1em;
+			height: 1em;
 			font-size: 1em;
 		}
 
@@ -300,17 +300,17 @@
 			transform: translateY(-50%);
 		}
 
-		.nav-button.left {
-			left: 0.5rem;
-		}
+			.nav-button.left {
+				left: 0.5em;
+			}
 
-		.nav-button.right {
-			right: 0.5rem;
-		}
+			.nav-button.right {
+				right: 0.5em;
+			}
 
-		.select-button {
-			font-size: 1em;
-			padding: 0.6rem 1.5rem;
-		}
+			.select-button {
+				font-size: 1em;
+				padding: 0.5em 1.5em;
+			}
 	}
 </style>

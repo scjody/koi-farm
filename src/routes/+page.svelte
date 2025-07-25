@@ -106,7 +106,7 @@
 			{/if}
 		</div>
 
-		<div class="insert-coin c64-text c64-font c64-flash">INSERT COIN</div>
+		<div class="insert-coin c64-text c64-flash">INSERT COIN</div>
 	</div>
 </main>
 

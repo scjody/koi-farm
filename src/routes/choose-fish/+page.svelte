@@ -3,9 +3,11 @@
 	import fishData from '$lib/data/fishes.json';
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
+	import { selectFish as setSelectedFish } from '$lib/stores/gameState';
+	import type { Fish } from '$lib/types/fish';
 	
 	let currentIndex = 0;
-	let fishes = fishData.fishes;
+	let fishes: Fish[] = fishData.fishes;
 	
 	// Handle keyboard navigation
 	function handleKeydown(e: KeyboardEvent) {
@@ -35,10 +37,10 @@
 	}
 	
 	function selectFish() {
-		// TODO: Store selected fish and navigate to game
-		console.log('Selected fish:', fishes[currentIndex]);
-		// For now, go back to home
-		goto('/');
+		// Store selected fish
+		setSelectedFish(fishes[currentIndex]);
+		// Navigate to game
+		goto('/game');
 	}
 	
 	onMount(() => {

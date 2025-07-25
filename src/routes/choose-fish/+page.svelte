@@ -212,7 +212,7 @@
 		gap: 0;
 		width: 100%;
 		max-width: 300px;
-		margin-left: 6ch;
+		margin-left: 1ch;
 		text-align: left;
 	}
 

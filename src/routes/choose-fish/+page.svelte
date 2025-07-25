@@ -142,7 +142,7 @@
 	}
 
 	.c64-title {
-		font-size: 2em;
+		font-size: 1em;
 		margin: 1rem 0;
 	}
 
@@ -184,7 +184,7 @@
 	}
 
 	.fish-name {
-		font-size: 1.5em;
+		font-size: 1em;
 		margin: 0.5rem 0;
 		text-transform: uppercase;
 	}
@@ -233,9 +233,9 @@
 		border: 2px solid var(--c64-light-blue);
 		color: var(--c64-light-blue);
 		font-family: 'Sixtyfour', monospace;
-		font-size: 2rem;
-		width: 3rem;
-		height: 3rem;
+		font-size: 1em;
+		width: 3em;
+		height: 3em;
 		cursor: pointer;
 		transition: all 0.2s ease;
 		display: flex;
@@ -271,13 +271,13 @@
 		}
 
 		.nav-button {
-			width: 2.5rem;
-			height: 2.5rem;
-			font-size: 1.5rem;
+			width: 2.5em;
+			height: 2.5em;
+			font-size: 1em;
 		}
 
 		.fish-name {
-			font-size: 1.2em;
+			font-size: 1em;
 		}
 
 		.fish-description {
@@ -287,7 +287,7 @@
 
 	@media (max-width: 480px) {
 		.c64-title {
-			font-size: 1.5em;
+			font-size: 1em;
 		}
 
 		.fish-display {

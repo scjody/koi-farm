@@ -75,8 +75,10 @@
 							class="fish-image"
 						/>
 						
-						<h2 class="fish-name c64-text c64-cyan">{currentFish.name}</h2>
-						<p class="fish-description c64-text">{currentFish.description}</p>
+						<div class="fish-text">
+							<h2 class="fish-name c64-text c64-cyan">{currentFish.name}</h2>
+							<p class="fish-description c64-text">{currentFish.description}</p>
+						</div>
 					</div>
 				{/key}
 				
@@ -112,9 +114,6 @@
 		</div>
 		
 		<div class="controls">
-			<p class="instructions c64-text">
-				USE ARROW KEYS TO BROWSE - PRESS ENTER TO SELECT
-			</p>
 		</div>
 	</div>
 </main>
@@ -146,18 +145,17 @@
 	.fish-display {
 		flex: 1;
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
 		gap: 2em;
 		position: relative;
-		padding: 0;
-		margin-top: -1em;
+		padding: 2em 0 0 0;
 	}
 
 	.fish-card {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
 		max-width: 600px;
 		width: 100%;
 	}
@@ -165,8 +163,13 @@
 	.fish-info {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
 		width: 100%;
+	}
+
+	.fish-text {
+		width: 100%;
+		text-align: left;
 	}
 
 	.fish-image {
@@ -183,7 +186,7 @@
 
 	.fish-name {
 		font-size: 1em;
-		margin: 0;
+		margin: 0 0 1em 0;
 		text-transform: uppercase;
 	}
 
@@ -192,7 +195,11 @@
 		margin: 0 0 1em;
 		width: 30ch;
 		max-width: 30ch;
-		line-height: 1.4;
+		line-height: 1;
+		height: 4em;
+		min-height: 4em;
+		max-height: 4em;
+		overflow: hidden;
 	}
 
 	.stats {
@@ -237,10 +244,9 @@
 		height: 1em;
 		cursor: pointer;
 		transition: all 0.2s ease;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 		padding: 0;
+		align-self: flex-start;
+		margin-top: 13em;
 	}
 
 	.nav-button:hover {
@@ -248,12 +254,7 @@
 	}
 
 	.controls {
-		margin-top: -1em;
-	}
-
-	.instructions {
-		font-size: 1em;
-		opacity: 0.8;
+		display: none;
 	}
 
 	/* Responsive design */

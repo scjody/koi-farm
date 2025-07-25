@@ -66,6 +66,10 @@ html, body {
   width: 80vw;
   max-width: calc(80vh * 4 / 3);
   max-height: 80vh;
+  
+  /* C64 standard text grid: 40 columns x 25 rows */
+  font-size: calc(min(80vw, calc(80vh * 4 / 3)) / 40);
+  line-height: 1.2;
 }
 
 /* Alternative method for browsers that don't support aspect-ratio */
@@ -83,16 +87,17 @@ html, body {
   font-family: 'Sixtyfour', monospace;
   color: var(--c64-light-blue);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
   text-shadow: 0 0 5px rgba(0, 136, 255, 0.8);
   font-variation-settings: "BLED" 0, "SCAN" 0;
+  font-size: 1em;
 }
 
 /* C64 Title */
 .c64-title {
-  font-size: 2.5rem;
+  font-size: 2em;
   text-align: center;
-  margin: 2rem 0;
+  margin: 1em 0;
   animation: c64-glow 2s ease-in-out infinite alternate;
 }
 
@@ -101,6 +106,7 @@ html, body {
   font-family: 'Pacifico', cursive;
   text-transform: none;
   letter-spacing: normal;
+  font-size: 2.5rem;
 }
 
 /* C64 Button Styling */
@@ -120,6 +126,10 @@ html, body {
   background-color: var(--c64-light-blue);
   color: var(--c64-blue);
   box-shadow: 0 0 10px rgba(0, 136, 255, 0.8);
+}
+
+.c64-button:active {
+  transform: scale(0.98);
 }
 
 /* C64 Glow Animation */
@@ -149,12 +159,12 @@ html, body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .c64-title {
-    font-size: 1.5rem;
+    font-size: 1.5em;
   }
 }
 
 @media (max-width: 480px) {
   .c64-title {
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
 }

@@ -2,6 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { crossfade } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import { goto } from '$app/navigation';
 
 	// List of all koi fish images
 	const koiImages = [
@@ -86,6 +87,10 @@
 			clearInterval(intervalId);
 		}
 	});
+	
+	function handleInsertCoin() {
+		goto('/choose-fish');
+	}
 </script>
 
 <main>
@@ -106,7 +111,13 @@
 			{/if}
 		</div>
 
-		<div class="insert-coin c64-text c64-flash">INSERT COIN</div>
+		<button 
+			class="insert-coin c64-text c64-flash"
+			on:click={handleInsertCoin}
+			aria-label="Insert coin to start"
+		>
+			INSERT COIN
+		</button>
 	</div>
 </main>
 
@@ -162,8 +173,18 @@
 	}
 
 	.insert-coin {
-		font-size: 1.2rem;
+		font-size: 1em;
 		margin: 1rem 0;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0.5rem 1rem;
+		transition: all 0.2s ease;
+	}
+	
+	.insert-coin:hover {
+		animation-play-state: paused;
+		text-shadow: 0 0 20px rgba(0, 136, 255, 1);
 	}
 
 	/* Responsive design */
@@ -187,7 +208,7 @@
 		}
 
 		.insert-coin {
-			font-size: 1rem;
+			font-size: 1em;
 		}
 	}
 </style>

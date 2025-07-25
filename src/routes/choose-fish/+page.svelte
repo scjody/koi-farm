@@ -55,11 +55,11 @@
 
 <main>
 	<div class="c64-content">
-		<h1 class="c64-title c64-text">CHOOSE A FISH</h1>
+		<h1 class="c64-title c64-text c64-cyan">CHOOSE A FISH</h1>
 		
 		<div class="fish-display">
 			<button 
-				class="nav-button left" 
+				class="nav-button left c64-cyan" 
 				on:click={previousFish}
 				aria-label="Previous fish"
 			>
@@ -75,7 +75,7 @@
 							class="fish-image"
 						/>
 						
-						<h2 class="fish-name c64-text">{currentFish.name}</h2>
+						<h2 class="fish-name c64-text c64-cyan">{currentFish.name}</h2>
 						<p class="fish-description c64-text">{currentFish.description}</p>
 					</div>
 				{/key}
@@ -103,7 +103,7 @@
 			</div>
 			
 			<button 
-				class="nav-button right" 
+				class="nav-button right c64-cyan" 
 				on:click={nextFish}
 				aria-label="Next fish"
 			>
@@ -112,9 +112,6 @@
 		</div>
 		
 		<div class="controls">
-			<button class="c64-button select-button" on:click={selectFish}>
-				SELECT THIS FISH
-			</button>
 			<p class="instructions c64-text">
 				USE ARROW KEYS TO BROWSE - PRESS ENTER TO SELECT
 			</p>
@@ -143,7 +140,7 @@
 
 	.c64-title {
 		font-size: 1em;
-		margin: 1em 0;
+		margin: 0.5em 0;
 	}
 
 	.fish-display {
@@ -154,6 +151,7 @@
 		gap: 2em;
 		position: relative;
 		padding: 0;
+		margin-top: -1em;
 	}
 
 	.fish-card {
@@ -232,7 +230,7 @@
 	.nav-button {
 		background: none;
 		border: none;
-		color: var(--c64-light-blue);
+		color: inherit;
 		font-family: 'Sixtyfour', monospace;
 		font-size: 1em;
 		width: 1em;
@@ -246,17 +244,11 @@
 	}
 
 	.nav-button:hover {
-		text-shadow: 0 0 10px rgba(0, 136, 255, 0.8);
+		text-shadow: 0 0 10px rgba(170, 255, 238, 0.8);
 	}
 
 	.controls {
-		margin-top: 0;
-	}
-
-	.select-button {
-		font-size: 1em;
-		padding: 0.5em 2em;
-		margin-bottom: 1em;
+		margin-top: -1em;
 	}
 
 	.instructions {
@@ -307,10 +299,9 @@
 			.nav-button.right {
 				right: 0.5em;
 			}
+		}
 
-			.select-button {
-				font-size: 1em;
-				padding: 0.5em 1.5em;
-			}
+	.c64-cyan {
+		color: var(--c64-cyan);
 	}
 </style>

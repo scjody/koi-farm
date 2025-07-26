@@ -1,6 +1,7 @@
 # Koi Farm
 
 > **Note:** This project was vibe coded using various AI products:
+>
 > - **Claude** (Anthropic) - Main development and coding
 > - **Gemini** (Google) - Fish/koi images generation
 > - **Suno** - Background music creation

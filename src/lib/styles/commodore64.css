@@ -1,170 +1,177 @@
 /* Commodore 64 Color Palette and Styling */
 :root {
-  /* C64 Color Palette */
-  --c64-black: #000000;
-  --c64-white: #FFFFFF;
-  --c64-red: #880000;
-  --c64-cyan: #AAFFEE;
-  --c64-purple: #CC44CC;
-  --c64-green: #00CC55;
-  --c64-blue: #0000AA;
-  --c64-yellow: #EEEE77;
-  --c64-orange: #DD8855;
-  --c64-brown: #664400;
-  --c64-light-red: #FF7777;
-  --c64-dark-grey: #333333;
-  --c64-grey: #777777;
-  --c64-light-green: #AAFF66;
-  --c64-light-blue: #0088FF;
-  --c64-light-grey: #BBBBBB;
-  
-  /* C64 Screen Dimensions */
-  --c64-aspect-ratio: 4 / 3;
-  --c64-border-min: 10%;
+	/* C64 Color Palette */
+	--c64-black: #000000;
+	--c64-white: #ffffff;
+	--c64-red: #880000;
+	--c64-cyan: #aaffee;
+	--c64-purple: #cc44cc;
+	--c64-green: #00cc55;
+	--c64-blue: #0000aa;
+	--c64-yellow: #eeee77;
+	--c64-orange: #dd8855;
+	--c64-brown: #664400;
+	--c64-light-red: #ff7777;
+	--c64-dark-grey: #333333;
+	--c64-grey: #777777;
+	--c64-light-green: #aaff66;
+	--c64-light-blue: #0088ff;
+	--c64-light-grey: #bbbbbb;
+
+	/* C64 Screen Dimensions */
+	--c64-aspect-ratio: 4 / 3;
+	--c64-border-min: 10%;
 }
 
 /* Global reset for C64 styling */
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
 }
 
 /* C64 Screen Container */
 .c64-container {
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--c64-light-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 0;
-  margin: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--c64-light-blue);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	padding: 0;
+	margin: 0;
 }
 
 /* C64 Screen (4:3 aspect ratio with border) */
 .c64-screen {
-  background-color: var(--c64-blue);
-  color: var(--c64-light-blue);
-  position: relative;
-  border: 4px solid var(--c64-light-blue);
-  box-shadow: 
-    inset 0 0 20px rgba(0, 136, 255, 0.3),
-    0 0 30px rgba(0, 136, 255, 0.2);
-  font-family: 'Sixtyfour', monospace;
-  overflow: hidden;
-  
-  /* Responsive sizing maintaining aspect ratio */
-  aspect-ratio: 4 / 3;
-  width: 80vw;
-  max-width: calc(80vh * 4 / 3);
-  max-height: 80vh;
-  
-  /* C64 standard text grid: 40 columns x 25 rows */
-  font-size: calc(min(80vw, calc(80vh * 4 / 3)) / 40);
-  line-height: 1.2;
+	background-color: var(--c64-blue);
+	color: var(--c64-light-blue);
+	position: relative;
+	border: 4px solid var(--c64-light-blue);
+	box-shadow:
+		inset 0 0 20px rgba(0, 136, 255, 0.3),
+		0 0 30px rgba(0, 136, 255, 0.2);
+	font-family: 'Sixtyfour', monospace;
+	overflow: hidden;
+
+	/* Responsive sizing maintaining aspect ratio */
+	aspect-ratio: 4 / 3;
+	width: 80vw;
+	max-width: calc(80vh * 4 / 3);
+	max-height: 80vh;
+
+	/* C64 standard text grid: 40 columns x 25 rows */
+	font-size: calc(min(80vw, calc(80vh * 4 / 3)) / 40);
+	line-height: 1.2;
 }
 
 /* Alternative method for browsers that don't support aspect-ratio */
 @supports not (aspect-ratio: 4 / 3) {
-  .c64-screen {
-    width: 80vw;
-    height: calc(80vw * 3 / 4);
-    max-width: calc(80vh * 4 / 3);
-    max-height: 80vh;
-  }
+	.c64-screen {
+		width: 80vw;
+		height: calc(80vw * 3 / 4);
+		max-width: calc(80vh * 4 / 3);
+		max-height: 80vh;
+	}
 }
 
 /* C64 Text Styling */
 .c64-text {
-  font-family: 'Sixtyfour', monospace;
-  color: var(--c64-light-blue);
-  text-transform: uppercase;
-  letter-spacing: 0;
-  text-shadow: 0 0 5px rgba(0, 136, 255, 0.8);
-  font-variation-settings: "BLED" 0, "SCAN" 0;
-  font-size: 1em;
+	font-family: 'Sixtyfour', monospace;
+	color: var(--c64-light-blue);
+	text-transform: uppercase;
+	letter-spacing: 0;
+	text-shadow: 0 0 5px rgba(0, 136, 255, 0.8);
+	font-variation-settings:
+		'BLED' 0,
+		'SCAN' 0;
+	font-size: 1em;
 }
 
 /* C64 Title */
 .c64-title {
-  font-size: 2em;
-  text-align: center;
-  margin: 1em 0;
-  animation: c64-glow 2s ease-in-out infinite alternate;
+	font-size: 2em;
+	text-align: center;
+	margin: 1em 0;
+	animation: c64-glow 2s ease-in-out infinite alternate;
 }
 
 /* Title with custom font */
 .c64-title-custom {
-  font-family: 'Pacifico', cursive;
-  text-transform: none;
-  letter-spacing: normal;
-  font-size: 2.5rem;
+	font-family: 'Pacifico', cursive;
+	text-transform: none;
+	letter-spacing: normal;
+	font-size: 2.5rem;
 }
 
 /* C64 Button Styling */
 .c64-button {
-  background-color: var(--c64-blue);
-  color: var(--c64-light-blue);
-  border: 2px solid var(--c64-light-blue);
-  padding: 0.5rem 1rem;
-  font-family: 'Sixtyfour', monospace;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-variation-settings: "BLED" 0, "SCAN" 0;
+	background-color: var(--c64-blue);
+	color: var(--c64-white);
+	border: 2px solid var(--c64-light-blue);
+	padding: 0.5rem 1rem;
+	font-family: 'Sixtyfour', monospace;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-variation-settings:
+		'BLED' 0,
+		'SCAN' 0;
 }
 
 .c64-button:hover {
-  background-color: var(--c64-light-blue);
-  color: var(--c64-blue);
-  box-shadow: 0 0 10px rgba(0, 136, 255, 0.8);
+	background-color: var(--c64-white);
+	color: var(--c64-blue);
+	box-shadow: 0 0 10px rgba(0, 136, 255, 0.8);
 }
 
 .c64-button:active {
-  transform: scale(0.98);
+	transform: scale(0.98);
 }
 
 /* C64 Glow Animation */
 @keyframes c64-glow {
-  from {
-    text-shadow: 0 0 5px rgba(0, 136, 255, 0.8);
-  }
-  to {
-    text-shadow: 0 0 10px rgba(0, 136, 255, 1);
-  }
+	from {
+		text-shadow: 0 0 5px rgba(0, 136, 255, 0.8);
+	}
+	to {
+		text-shadow: 0 0 10px rgba(0, 136, 255, 1);
+	}
 }
 
 /* C64 Flashing Text */
 .c64-flash {
-  animation: c64-flash 1s step-start infinite;
+	animation: c64-flash 1s step-start infinite;
 }
 
 @keyframes c64-flash {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
-  }
+	0%,
+	50% {
+		opacity: 1;
+	}
+	51%,
+	100% {
+		opacity: 0;
+	}
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .c64-title {
-    font-size: 1.5em;
-  }
+	.c64-title {
+		font-size: 1.5em;
+	}
 }
 
 @media (max-width: 480px) {
-  .c64-title {
-    font-size: 1.2em;
-  }
+	.c64-title {
+		font-size: 1.2em;
+	}
 }

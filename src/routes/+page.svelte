@@ -22,14 +22,14 @@
 	const [send, receive] = crossfade({
 		duration: 1000,
 		easing: quintOut,
-		fallback(node, params) {
+		fallback(node) {
 			const style = getComputedStyle(node);
 			const transform = style.transform === 'none' ? '' : style.transform;
 
 			return {
 				duration: 1000,
 				easing: quintOut,
-				css: t => `
+				css: (t) => `
 					transform: ${transform} scale(${t});
 					opacity: ${t}
 				`
@@ -54,32 +54,9 @@
 	onMount(() => {
 		// Set initial koi
 		currentKoi = getRandomKoi();
-		
+
 		// Change koi every 5 seconds
 		intervalId = setInterval(changeKoi, 5000);
-
-		// Start background music
-		const audio = new Audio('/frostbyte-dreams.mp3');
-		audio.loop = true;
-		audio.volume = 0.3; // Set to 30% volume
-		
-		// Auto-play with user interaction handling
-		const playAudio = () => {
-			audio.play().catch(e => console.log('Audio autoplay prevented:', e));
-		};
-		
-		// Try to play immediately
-		playAudio();
-		
-		// Also play on first user interaction
-		const handleFirstInteraction = () => {
-			playAudio();
-			document.removeEventListener('click', handleFirstInteraction);
-			document.removeEventListener('keydown', handleFirstInteraction);
-		};
-		
-		document.addEventListener('click', handleFirstInteraction);
-		document.addEventListener('keydown', handleFirstInteraction);
 	});
 
 	onDestroy(() => {
@@ -87,7 +64,7 @@
 			clearInterval(intervalId);
 		}
 	});
-	
+
 	function handleInsertCoin() {
 		goto('/choose-fish');
 	}
@@ -96,27 +73,27 @@
 <main>
 	<div class="c64-content">
 		<h1 class="c64-title c64-text c64-title-custom">Happy Koi Farm</h1>
-		
+
 		<div class="koi-display">
 			{#if currentKoi}
 				{#key currentKoi}
-					<img 
-						src="/{currentKoi}" 
-						alt="Beautiful koi fish" 
+					<img
+						src="/{currentKoi}"
+						alt="Beautiful koi fish"
 						class="koi-image"
-						in:receive={{key: currentKoi}}
-						out:send={{key: currentKoi}}
+						in:receive={{ key: currentKoi }}
+						out:send={{ key: currentKoi }}
 					/>
 				{/key}
 			{/if}
 		</div>
 
-		<button 
-			class="insert-coin c64-text c64-flash"
+		<button
+			class="insert-coin c64-text"
 			on:click={handleInsertCoin}
 			aria-label="Insert coin to start"
 		>
-			INSERT COIN
+			<span class="c64-flash">INSERT COIN</span>
 		</button>
 	</div>
 </main>
@@ -164,10 +141,7 @@
 		max-width: 80%;
 		max-height: 80%;
 		object-fit: contain;
-		filter: 
-			drop-shadow(0 0 10px rgba(0, 136, 255, 0.3))
-			brightness(1.1)
-			contrast(1.2);
+		filter: drop-shadow(0 0 10px rgba(0, 136, 255, 0.3)) brightness(1.1) contrast(1.2);
 		position: absolute;
 		image-rendering: auto;
 	}
@@ -176,15 +150,20 @@
 		font-size: 1em;
 		margin: 1rem 0;
 		background: none;
-		border: none;
+		border: 2px solid var(--c64-light-blue);
 		cursor: pointer;
 		padding: 0.5rem 1rem;
 		transition: all 0.2s ease;
 	}
-	
+
 	.insert-coin:hover {
-		animation-play-state: paused;
-		text-shadow: 0 0 20px rgba(0, 136, 255, 1);
+		background-color: var(--c64-cyan);
+		color: var(--c64-blue);
+	}
+
+	.insert-coin:hover .c64-flash {
+		animation: none;
+		opacity: 1;
 	}
 
 	/* Responsive design */

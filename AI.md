@@ -5,6 +5,7 @@ This document outlines the development workflow for AI assistants working on thi
 ## Git Workflow
 
 ### Branch Management
+
 1. **Create a new branch** when starting any new task such as:
    - New features
    - Bug fixes
@@ -12,6 +13,7 @@ This document outlines the development workflow for AI assistants working on thi
    - Documentation updates
 
 ### Commit Strategy
+
 2. **Commit frequently** when it makes logical sense:
    - After completing a logical unit of work
    - Before switching contexts or taking breaks
@@ -22,6 +24,7 @@ This document outlines the development workflow for AI assistants working on thi
    - Only amend commits that haven't been pushed yet
 
 ### Pull Request Process
+
 4. **Create PRs** when code is ready for user testing:
    - All functionality is implemented and tested
    - Code follows project conventions

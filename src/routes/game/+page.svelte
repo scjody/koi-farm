@@ -2,46 +2,40 @@
 	import { gameState } from '$lib/stores/gameState';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	
+
 	let selectedFish = null;
-	
+
 	onMount(() => {
 		// Get the selected fish from the store
-		const unsubscribe = gameState.subscribe(state => {
+		const unsubscribe = gameState.subscribe((state) => {
 			selectedFish = state.selectedFish;
 			if (!selectedFish) {
 				// If no fish selected, redirect to selection
 				goto('/choose-fish');
 			}
 		});
-		
+
 		return unsubscribe;
 	});
 </script>
 
 {#if selectedFish}
-<main>
-	<div class="c64-content">
-		<h1 class="c64-title c64-text">KOI FARM</h1>
-		
-		<div class="game-area">
-			<div class="selected-fish">
-				<img 
-					src="/{selectedFish.image}" 
-					alt="{selectedFish.name}"
-					class="fish-image"
-				/>
-				<p class="fish-name c64-text">{selectedFish.name}</p>
+	<main>
+		<div class="c64-content">
+			<h1 class="c64-title c64-text">KOI FARM</h1>
+
+			<div class="game-area">
+				<div class="selected-fish">
+					<img src="/{selectedFish.image}" alt={selectedFish.name} class="fish-image" />
+					<p class="fish-name c64-text">{selectedFish.name}</p>
+				</div>
+
+				<div class="coming-soon c64-text c64-flash">GAME COMING SOON</div>
 			</div>
-			
-			<div class="coming-soon c64-text c64-flash">
-				GAME COMING SOON
-			</div>
+
+			<button class="c64-button" on:click={() => goto('/')}>BACK TO HOME</button>
 		</div>
-		
-		<button class="c64-button" on:click={() => goto('/')}>BACK TO HOME</button>
-	</div>
-</main>
+	</main>
 {/if}
 
 <style>
@@ -87,10 +81,7 @@
 	.fish-image {
 		width: 200px;
 		height: auto;
-		filter: 
-			drop-shadow(0 0 10px rgba(0, 136, 255, 0.3))
-			brightness(1.1)
-			contrast(1.2);
+		filter: drop-shadow(0 0 10px rgba(0, 136, 255, 0.3)) brightness(1.1) contrast(1.2);
 	}
 
 	.fish-name {

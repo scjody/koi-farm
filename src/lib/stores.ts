@@ -1,7 +1,13 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
-type Serializable = string | number | boolean | null | Serializable[] | { [key: string]: Serializable };
+type Serializable =
+	| string
+	| number
+	| boolean
+	| null
+	| Serializable[]
+	| { [key: string]: Serializable };
 
 /**
  * Creates a writable store that syncs with localStorage

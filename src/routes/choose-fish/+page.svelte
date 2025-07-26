@@ -93,11 +93,7 @@
 						/>
 
 						<div class="fish-text">
-							<h2
-								class="fish-name c64-text"
-								class:c64-cyan={!isLocked}
-								class:c64-grey={isLocked}
-							>
+							<h2 class="fish-name c64-text" class:c64-cyan={!isLocked} class:c64-grey={isLocked}>
 								{currentFish.name}
 							</h2>
 							<p class="fish-description c64-text" class:c64-grey={isLocked}>
@@ -292,10 +288,10 @@
 	}
 
 	.nav-button:disabled {
-        color: var(--c64-grey);
-        cursor: default;
-        text-shadow: none;
-    }
+		color: var(--c64-grey);
+		cursor: default;
+		text-shadow: none;
+	}
 
 	.controls {
 		display: none;

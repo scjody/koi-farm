@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
 const createAudioStore = () => {
-	const { subscribe, set, update } = writable({
+	const { subscribe, update } = writable({
 		isPlaying: false,
 		audio: null as HTMLAudioElement | null
 	});

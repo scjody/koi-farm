@@ -4,6 +4,7 @@
 >
 > - **Claude** (Anthropic) - Main development and coding
 > - **Gemini** (Google) - Fish/koi images generation
+> - **Gemini** (Google) - UI/UX refinements and bug fixes
 > - **Suno** - Background music creation
 
 A peaceful digital koi pond experience built with Svelte.
